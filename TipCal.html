@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+
+
+      <style>
+
+        body{
+            background: linear-gradient(100deg, #6fafd9, #9b59b6);
+        }
+
+        h1{
+           color: rgb(9, 9, 9);
+           display: flex;
+           justify-content: center;            
+        }
+
+        .box1{
+          background-color: #74cf9c;
+          color: #0c1412;
+          width: 24rem;
+          height: 28rem;
+          margin-left: 30rem;
+          border-radius: 5px;
+          box-shadow: 0 0.5rem 4rem;
+        }
+
+        .box{
+          padding: 4rem;
+          display: flex;
+          flex-direction: column;
+        }          
+
+        .submit{
+            background-color:  rgb(74, 167, 142);
+            border:  rgb(74, 167, 142) solid 2px;
+            border-radius: 5px;
+            height: 30px;
+            width: 80px;
+        }
+
+        label{
+          margin-left: -2rem;
+        }
+
+        input{
+          height: 2rem;
+          width: 17rem;
+          margin-left: -2rem;
+        }
+
+        button{
+          height: 2rem;
+          width: 6rem;
+          color: #fff;
+          margin-left: -2rem;
+          background-color: rgb(13, 14, 13);
+        }
+
+      </style>
+
+</head>
+<body>
+     
+  <div>
+    <h1>Tip Calculator</h1>
+    <div class="box1">
+    <div class="box">
+        <label>Bill Amount</label>
+        <input type="text" id="billamount"><br>
+        <label>Tip Percentage</label>
+        <input type="text"  id="tipperc"><br>
+        <label>Tip Amount</label>
+        <input type="text" id="tiptotal"><br>
+        <label>Total Billed</label>
+        <input type="text" id="totalbilled"><br>
+        <button onclick="tipcalcy()">Calculator</button>
+    </div>
+  </div>
+  </div>
+    
+  <script>
+
+    const tipcalcy=()=>{
+      let amount = document.getElementById('billamount').value;
+      let perc = document.getElementById('tipperc').value;
+      let tip = amount*(perc / 100);
+      alert(tip);
+      let total = tip + Number(amount);
+      alert(total);
+      document.getElementById('tiptotal').value = tip;
+      document.getElementById('totalbilled').value = total;
+    }
+
+  </script>
+  
+</body>
+</html>
